@@ -1,0 +1,20 @@
+<nav class="navbar navbar-dark unique-color-dark sticky-top">
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" (keyup)="onKey($event)">
+    </form>
+</nav>
+<div class="list-group">
+    <a *ngFor="let pitcher of filteredPitchers" href="#" class="list-group-item list-group-item-action flex-column align-items-start" routerLink="/players/{{pitcher?pitcher.id:'1'}}">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{pitcher.firstName + " " + pitcher.lastName}}</h5>
+        <small>{{pitcher.position}}</small>
+      </div>
+      <small>Height: {{pitcher.height}}</small>
+      <br>
+      <small>Pitches: {{pitcher.pitchingGrips.toString()}}</small>
+      <br>
+      <small>Nationality: {{pitcher.nationality}}</small>
+    </a>
+    </div>
+
+    <script type="text/javascript" src="../../assets/js/mdb.min.js"></script>

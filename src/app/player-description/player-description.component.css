@@ -1,0 +1,11 @@
+.card-body p{
+  margin-bottom: 0px;
+}
+
+.card-up{
+    height: 30%
+}
+
+.front,.back{
+    box-shadow: none;
+}

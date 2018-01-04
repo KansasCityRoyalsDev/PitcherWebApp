@@ -1,0 +1,62 @@
+<nav class="navbar navbar-dark unique-color-dark sticky-top">
+    <a class="navbar-brand" routerLink='/players' >Back</a>
+</nav>
+<!--Rotating card-->
+<div class="card-wrapper">
+    <div id="card-1" class="card-rotating effect__click" [ngClass]="toggle?'flipped':''">
+
+        <!--Front Side-->
+        <div class="face front">
+
+        <!-- Image-->
+        <div class="card-up">
+          
+            <img src="https://usatftw.files.wordpress.com/2014/10/kansas_city_royals.jpg" alt="Team member card image" class="img-fluid" >
+
+
+        </div>
+
+        <!--Avatar-->
+        <div class="avatar">
+            <img src="{{myPitcher?myPitcher.img:''}}" class="rounded-circle img-responsive" alt="sample">
+        </div>
+
+        <!--Content-->
+        <div class="card-body">
+            <h4 class="mt-1">{{myPitcher?myPitcher.firstName + " " + myPitcher.lastName:""}}</h4>
+            <p class="font-bold dark-grey-text">Position: {{myPitcher?myPitcher.position:""}}</p>
+            <p class="font-bold dark-grey-text">Height: {{myPitcher?myPitcher.height:""}}</p>
+            <p class="font-bold dark-grey-text">Nationality: {{myPitcher?myPitcher.nationality:""}}</p>
+            <p class="font-bold dark-grey-text">Grips: {{myPitcher?myPitcher.pitchingGrips.toString():""}}</p>
+            <!--Triggering button-->
+            <a class="rotate-btn grey-text" data-card="card-1" (click)="toggleCard()">
+            <i class="fa fa-repeat grey-text"></i> Click to see Coaches Comments</a>
+        </div>
+
+        </div>
+        <!--Front Side-->
+
+        <!--Back Side-->
+        <div class="face back">
+
+        <!--Content-->
+        <h4 class="font-bold mt-4 mb-2">
+            <strong>Comments</strong>
+        </h4>
+        <hr>
+        <p *ngFor='let comment of pitcherComments'>
+            <strong>{{comment.from}} says:</strong>
+            {{comment.comment}}
+        </p>
+        <button type="button" class="btn btn-outline-primary btn-rounded waves-effect" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSdDNRPFnUEuczqwRnD5FVNYE6a1-IS_RpTLIh6m8vGgzqShPg/viewform?usp=sf_link'" >Submit Comment</button>
+        <hr>
+        <!--Triggering button-->
+        <a class="rotate-btn grey-text" data-card="card-1" (click)="toggleCard()">
+            <i class="fa fa-repeat grey-text"></i> Click here to rotate back</a>
+
+        </div>
+        <!--Back Side-->
+
+    </div>
+    </div>
+    
