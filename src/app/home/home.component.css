@@ -1,0 +1,15 @@
+#home-page{
+    background: #004687;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+#logo{
+    padding: 0px 30vw;
+    padding-top: 30px;
+}
+button{
+    display: inline-block;
+    margin: 30px 35vw;
+    border: 2px solid white;
+    color: white !important; 
+}

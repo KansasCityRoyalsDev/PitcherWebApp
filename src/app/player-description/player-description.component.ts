@@ -16,8 +16,6 @@ export class PlayerDescriptionComponent implements OnInit {
   @Input()
   myPitcher: Pitcher;
 
-  @ViewChild('rotButton') el:ElementRef;
-
   id:number; private sub: any;
   
   pitcherComments: PitcherComment[] = [];
@@ -31,25 +29,27 @@ export class PlayerDescriptionComponent implements OnInit {
       this.id = +params['id'];
       this._dataService.getPitchers()
       .subscribe(
-        response => {this.setPitcher(response)}
+        response => {this.setPitcher(response);
+          this._dataService.getComments()
+          .subscribe(
+            response => {this.setPitcherComments(response)},
+          )}
       )
     })
-
-    this._dataService.getComments()
-    .subscribe(
-      response => {this.setPitcherComments(response)},
-    )
 
 
   }
 
   setPitcherComments(res){
     for( let i = 1; i < res.values.length; i++){
-      let myComment: PitcherComment = new PitcherComment;
-      myComment.from = res.values[i][2];
-      myComment.to = res.values[i][1];
-      myComment.comment = res.values[i][3];
-      this.pitcherComments.push(myComment)
+      console.log(res.values[i][1].toLocaleLowerCase() + " " + this.myPitcher.firstName)
+      if(res.values[i][1].toLocaleLowerCase().includes(this.myPitcher.firstName.toLocaleLowerCase()) && res.values[i][1].toLocaleLowerCase().includes(this.myPitcher.lastName.toLocaleLowerCase()) ){                                                             //CONDITION FOR COMMENT GOES HERE
+        let myComment: PitcherComment = new PitcherComment;
+        myComment.from = res.values[i][2];
+        myComment.to = res.values[i][1];
+        myComment.comment = res.values[i][3];
+        this.pitcherComments.push(myComment)
+      }
     }
     console.log(this.pitcherComments);
   }
