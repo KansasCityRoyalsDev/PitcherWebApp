@@ -57,6 +57,12 @@ export class PlayerDescriptionComponent implements OnInit {
     this.toggle = !this.toggle;
     console.log(this.toggle)
   }
+  pitcherImg(){
+    if (this.myPitcher.img == "")
+      return 'https://t3.ftcdn.net/jpg/00/64/67/80/240_F_64678017_zUpiZFjj04cnLri7oADnyMH0XBYyQghG.jpg';
+    else 
+      return this.myPitcher.img;
+  }
   setPitcher(res){
     this.myPitcher = new Pitcher;
     for(let i = 1; i < res.values.length; i++){
