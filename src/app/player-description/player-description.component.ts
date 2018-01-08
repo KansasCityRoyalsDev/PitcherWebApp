@@ -15,13 +15,20 @@ import {DataService} from '../data.service';
 export class PlayerDescriptionComponent implements OnInit {
   @Input()
   myPitcher: Pitcher;
-
+  pitchingGrips: string[] = [];
   id:number; private sub: any;
   
   pitcherComments: PitcherComment[] = [];
 
   toggle: boolean = false;
 
+  gripImages = {
+    'FB' : "https://lh3.googleusercontent.com/NFps1CflQEfC5T2Vn64xN-m759k6xX6Ku6mOA8sqWTej9JqTeAThHusS9If-Hzgw9CVtqIsRpYW89YfAV8FoKoYbJ0rVxFviiQ4NGR3_fIAsV4QRuGkqgwW5umCMiki8S_tFCowO",
+    'CV' : "https://lh3.googleusercontent.com/BQ34h0bJVJ0vgc_xXZ4oeP4OIVsYImEnC6wPJFl36VgYbWge3Nol7AwWDhI4KiGzESntty2S6TMKAHIMbGLbfu3uDTWhJh7aAhFVcUDBY16ardhXc2i26fbV08Rx5OEg6pd9BVcu",
+    'CH' : "https://lh3.googleusercontent.com/Qnpis2Lhe7YsXa8veFaapOMmbSelumLUgFw8tIVdt06sKTGKhLDfRj9312mT_64UnV8p5lp9udKXttMsr7eRQKITKcXSzlYCSe3ZGOkMaAgoQiO1UREX54tApm8prPFdGnQybPBV",
+    'SL' : "https://lh3.googleusercontent.com/pfVfcYLQQO0FwfpLb3F_l--8B3dUUQvlruDhNddOZi4Uz4JO23fA4rkwZSCNQexkqGDNf-jWO47fLMutHj7IKj6qVYBujCsBp_4Re7rzLETJqhGvgVfB7bWw17l4iCHZqJT3Tx5U"
+  }
+  
   constructor(private _dataService: DataService, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -73,7 +80,8 @@ export class PlayerDescriptionComponent implements OnInit {
         this.myPitcher.height = res.values[i][3];
         this.myPitcher.nationality = res.values[i][4];
         this.myPitcher.position = res.values[i][5];
-        this.myPitcher.pitchingGrips = res.values[i][6].split(',');
+        this.myPitcher.pitchingGrips = res.values[i][6].split(',').map( x => x.toLocaleUpperCase());
+        this.pitchingGrips = this.myPitcher.pitchingGrips;
         this.myPitcher.id = res.values[i][7];
         console.log(this.myPitcher)
         return;

@@ -9,3 +9,7 @@
 .front,.back{
     box-shadow: none;
 }
+
+.pitching-grip{
+    margin: 1rem 4rem;
+}

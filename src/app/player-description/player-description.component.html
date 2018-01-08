@@ -32,7 +32,14 @@
             <a class="rotate-btn grey-text" data-card="card-1" (click)="toggleCard()">
             <i class="fa fa-repeat grey-text"></i> Click to see Coaches Comments</a>
         </div>
-
+        <h4 style="padding-top: 4rem;">Pitching Grips</h4>
+        <hr>
+        <div *ngFor="let grip of pitchingGrips" class="view hm-teal-super-light pitching-grip">
+                <img src="{{gripImages[grip]}}" class="img-fluid" alt="">
+                <div class="mask flex-center waves-effect waves-light">
+                    <h3><strong>{{grip}}</strong></h3>
+                </div>
+            </div>
         </div>
         <!--Front Side-->
 
