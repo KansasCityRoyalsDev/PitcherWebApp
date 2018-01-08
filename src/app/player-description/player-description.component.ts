@@ -24,7 +24,7 @@ export class PlayerDescriptionComponent implements OnInit {
 
   gripImages = {
     'FB' : "https://lh3.googleusercontent.com/NFps1CflQEfC5T2Vn64xN-m759k6xX6Ku6mOA8sqWTej9JqTeAThHusS9If-Hzgw9CVtqIsRpYW89YfAV8FoKoYbJ0rVxFviiQ4NGR3_fIAsV4QRuGkqgwW5umCMiki8S_tFCowO",
-    'CV' : "https://lh3.googleusercontent.com/BQ34h0bJVJ0vgc_xXZ4oeP4OIVsYImEnC6wPJFl36VgYbWge3Nol7AwWDhI4KiGzESntty2S6TMKAHIMbGLbfu3uDTWhJh7aAhFVcUDBY16ardhXc2i26fbV08Rx5OEg6pd9BVcu",
+    'CB' : "https://lh3.googleusercontent.com/BQ34h0bJVJ0vgc_xXZ4oeP4OIVsYImEnC6wPJFl36VgYbWge3Nol7AwWDhI4KiGzESntty2S6TMKAHIMbGLbfu3uDTWhJh7aAhFVcUDBY16ardhXc2i26fbV08Rx5OEg6pd9BVcu",
     'CH' : "https://lh3.googleusercontent.com/Qnpis2Lhe7YsXa8veFaapOMmbSelumLUgFw8tIVdt06sKTGKhLDfRj9312mT_64UnV8p5lp9udKXttMsr7eRQKITKcXSzlYCSe3ZGOkMaAgoQiO1UREX54tApm8prPFdGnQybPBV",
     'SL' : "https://lh3.googleusercontent.com/pfVfcYLQQO0FwfpLb3F_l--8B3dUUQvlruDhNddOZi4Uz4JO23fA4rkwZSCNQexkqGDNf-jWO47fLMutHj7IKj6qVYBujCsBp_4Re7rzLETJqhGvgVfB7bWw17l4iCHZqJT3Tx5U"
   }
