@@ -38,11 +38,12 @@
         <h4 style="padding-top: 4rem;">Pitching Grips</h4>
         <hr>
         <div *ngFor="let grip of pitchingGrips" class="view hm-teal-super-light pitching-grip">
+                <h4><strong>{{grip}}</strong></h4>
                 <img src="{{gripImages[grip]}}" class="img-fluid" alt="">
                 <div class="mask flex-center waves-effect waves-light">
-                    <h3><strong>{{grip}}</strong></h3>
                 </div>
             </div>
+            <br>
         </div>
         <!--Front Side-->
 
@@ -54,10 +55,22 @@
             <strong>Comments</strong>
         </h4>
         <hr>
-        <p *ngFor='let comment of pitcherComments'>
-            <strong>{{comment.from}} says:</strong>
-            {{comment.comment}}
-        </p>
+        <div class="comment" *ngFor='let comment of pitcherComments'>
+            <p>
+                <span style="font-size: 1.2em;"><strong>{{comment.from}} says:</strong></span>
+                <br>
+                {{comment.comment}}
+                <span *ngIf="comment.strengths" class="strengths">
+                    <br>
+                    <i class="fa fa-plus" aria-hidden="true"></i><strong> Strengths:</strong>{{comment.strengths}}</span>
+
+                <span *ngIf="comment.weaknesses" class="weaknesses">
+                <br>
+                <i class="fa fa-minus" aria-hidden="true"></i><strong> Weaknesses:</strong>{{comment.weaknesses}}</span>
+            </p>
+            <hr style="width:95%">
+
+        </div>
         <button type="button" class="btn btn-outline-primary btn-rounded waves-effect" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSdDNRPFnUEuczqwRnD5FVNYE6a1-IS_RpTLIh6m8vGgzqShPg/viewform?usp=sf_link'" >Submit Comment</button>
         <hr>
         <!--Triggering button-->

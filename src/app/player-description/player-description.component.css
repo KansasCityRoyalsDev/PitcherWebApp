@@ -13,3 +13,11 @@
 .pitching-grip{
     margin: 1rem 4rem;
 }
+
+.weaknesses i {
+    color: red;
+}
+
+.strengths i {
+    color: green;
+}

@@ -55,6 +55,8 @@ export class PlayerDescriptionComponent implements OnInit {
         myComment.from = res.values[i][2];
         myComment.to = res.values[i][1];
         myComment.comment = res.values[i][3];
+        myComment.strengths = res.values[i][4];
+        myComment.weaknesses = res.values[i][5];
         this.pitcherComments.push(myComment)
       }
     }
