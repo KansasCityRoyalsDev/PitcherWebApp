@@ -7,4 +7,7 @@ export class Pitcher {
     nationality: string;
     position: string;
     pitchingGrips: string[];
+    dob: string;
+    yearSigned: string;
+    levelsPlayed: string[];
 }

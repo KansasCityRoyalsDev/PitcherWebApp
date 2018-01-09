@@ -73,16 +73,20 @@ export class PlayerDescriptionComponent implements OnInit {
   setPitcher(res){
     this.myPitcher = new Pitcher;
     for(let i = 1; i < res.values.length; i++){
-      if(Number(res.values[i][7]) == this.id){
+      if(Number(res.values[i][10]) == this.id){
         this.myPitcher.lastName = res.values[i][0];
         this.myPitcher.firstName = res.values[i][1];
         this.myPitcher.img = res.values[i][2];
         this.myPitcher.height = res.values[i][3];
-        this.myPitcher.nationality = res.values[i][4];
-        this.myPitcher.position = res.values[i][5];
-        this.myPitcher.pitchingGrips = res.values[i][6].split(',').map( x => x.toLocaleUpperCase());
+        this.myPitcher.dob = res.values[i][4]
+        this.myPitcher.nationality = res.values[i][5];
+        this.myPitcher.position = res.values[i][6];
+        this.myPitcher.pitchingGrips = res.values[i][7].split(',').map( x => x.toLocaleUpperCase());
         this.pitchingGrips = this.myPitcher.pitchingGrips;
-        this.myPitcher.id = res.values[i][7];
+        this.myPitcher.yearSigned = res.values[i][8];
+        this.myPitcher.levelsPlayed = res.values[i][9].split(',');
+        this.myPitcher.id = res.values[i][10];
+
         console.log(this.myPitcher)
         return;
       }

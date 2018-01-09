@@ -32,10 +32,13 @@ export class PlayersComponent implements OnInit {
       myPitcher.firstName = res.values[i][1];
       myPitcher.img = res.values[i][2];
       myPitcher.height = res.values[i][3];
-      myPitcher.nationality = res.values[i][4];
-      myPitcher.position = res.values[i][5];
-      myPitcher.pitchingGrips = res.values[i][6].split(',');
-      myPitcher.id = res.values[i][7];
+      myPitcher.dob = res.values[i][4]
+      myPitcher.nationality = res.values[i][5];
+      myPitcher.position = res.values[i][6];
+      myPitcher.pitchingGrips = res.values[i][7].split(',');
+      myPitcher.yearSigned = res.values[i][8];
+      myPitcher.levelsPlayed = res.values[i][9].split(',');
+      myPitcher.id = res.values[i][10];
       this.pitchers.push(myPitcher)
     }
     console.log(this.pitchers)

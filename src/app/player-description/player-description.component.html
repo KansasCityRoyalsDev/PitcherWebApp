@@ -26,7 +26,10 @@
             <h4 class="mt-1">{{myPitcher?myPitcher.firstName + " " + myPitcher.lastName:""}}</h4>
             <p class="font-bold dark-grey-text">Position: {{myPitcher?myPitcher.position:""}}</p>
             <p class="font-bold dark-grey-text">Height: {{myPitcher?myPitcher.height:""}}</p>
+            <p class="font-bold dark-grey-text">DOB: {{myPitcher?myPitcher.dob:""}}</p>
             <p class="font-bold dark-grey-text">Nationality: {{myPitcher?myPitcher.nationality:""}}</p>
+            <p class="font-bold dark-grey-text">Year Signed: {{myPitcher?myPitcher.yearSigned:""}}</p>
+            <p class="font-bold dark-grey-text">Levels Played: {{myPitcher?myPitcher.levelsPlayed.toString():""}}</p>
             <p class="font-bold dark-grey-text">Grips: {{myPitcher?myPitcher.pitchingGrips.toString():""}}</p>
             <!--Triggering button-->
             <a class="rotate-btn grey-text" data-card="card-1" (click)="toggleCard()">
